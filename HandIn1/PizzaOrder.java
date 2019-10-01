@@ -6,6 +6,13 @@ public class PizzaOrder {
 
         showMenu();                   // Store number of chosen pizza
 
+
+        /*COMMENTS FROM ROBERT
+        only way ive been able to break it was during topping selection if i choose "three" instead of 3 it exits - dont really break just avoid toppings
+
+        and when a topping is chosen, it outputs topping 2 - might be confusing if u choose topping 1, choose second topping might be better wording.
+
+        * */
     }
 
     public static void showMenu(){
