@@ -320,6 +320,5 @@ public class PizzaOrder {
         addToppingsPrintReciept(chosenPizza,newPrice,chosenSize);
     }
 
-
 }
 
