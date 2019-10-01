@@ -13,7 +13,14 @@ public class PizzaOrder {
         and when a topping is chosen, it outputs topping 2 - might be confusing if u choose topping 1, choose second topping might be better wording.
 
         * */
+
+        /* Changes after Robert test
+           - Changed message when topping 2 needs to be chosen
+           - Changed message for exiting topping selection to be less confusing
+         */
+
     }
+
 
     public static void showMenu(){
 
@@ -143,7 +150,7 @@ public class PizzaOrder {
         System.out.println("7. "+topping7);
         System.out.println("------------------------------------------------------\n");
         System.out.println("Enter the number of the topping you want to add: ");
-        System.out.println("Enter 'exit' to order'");
+        System.out.println("Enter a non number to order'");
 
         int toppingPrice = 0;
         int toppingCount = 0;
@@ -204,7 +211,7 @@ public class PizzaOrder {
                 }
 
             chosenToppingNum = 0;
-            System.out.println("Topping 2");
+            System.out.println("Now choose topping 2");
 
             while(chosenToppingNum>7 || chosenToppingNum<1){
 
