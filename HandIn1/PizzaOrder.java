@@ -17,6 +17,7 @@ public class PizzaOrder {
         /* Changes after Robert test
            - Changed message when topping 2 needs to be chosen
            - Changed message for exiting topping selection to be less confusing
+           - Added extra comments
          */
 
     }
