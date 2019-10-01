@@ -25,7 +25,7 @@ public class PizzaOrder {
     public static void showMenu(){
 
 
-        String pizza1 = "Margherita: Tomato & cheese";
+        String pizza1 = "Margherita: Tomato & cheese";                      // Declare all pizzas
         String pizza2 = "Hawaii: Tomato, cheese, ham & pineapple";
         String pizza3 = "Italiano: Tomato, cheese & pepperoni";
         String pizza4 = "Marinara: Tomato, garlic & basil";
@@ -36,7 +36,7 @@ public class PizzaOrder {
         String pizza9 = "Crudo: Tomato, cheese & Parma ham";
         String pizza10 = "Tedesca: Tomato, cheese & Vienna sausage";
 
-        int pizza1Price = 60;
+        int pizza1Price = 60;                                               // Declare all pizza prices
         int pizza2Price = 75;
         int pizza3Price = 70;
         int pizza4Price = 65;
@@ -47,7 +47,7 @@ public class PizzaOrder {
         int pizza9Price = 70;
         int pizza10Price = 70;
 
-        System.out.printf("--------------------------- PIZZA MENU ---------------------------\n");
+        System.out.printf("--------------------------- PIZZA MENU ---------------------------\n");    // Prints the menu
         System.out.printf("------------------------------------------------------------------\n");
         System.out.printf("1. %-50s Price DKK %d\n",pizza1,pizza1Price);
         System.out.printf("2. %-50s Price DKK %d\n",pizza2,pizza2Price);
@@ -63,13 +63,13 @@ public class PizzaOrder {
         System.out.printf("------------------------------------------------------------------\n\n");
 
         Scanner in = new Scanner(System.in);
-        int pizzaNumber = 0;
+        int pizzaNumber = 0;                 // Variable to store the number of the chosen pizza
 
         System.out.println("Enter the number of the pizza you want to order: ");
 
-        while(pizzaNumber<1 || pizzaNumber>10){             // Input validation
+        while(pizzaNumber<1 || pizzaNumber>10){             // Input validation - Chosen number must be within scope
 
-            if(in.hasNextInt()){
+            if(in.hasNextInt()){                            // Input must be an integer
                 pizzaNumber = in.nextInt();
 
                 if(pizzaNumber<1 || pizzaNumber>10){
@@ -82,10 +82,10 @@ public class PizzaOrder {
             }
         }
 
-        String chosenPizza = "";
-        int pizzaPrice = 0;
+        String chosenPizza = "";       // Stores name of chosen pizza to use in receipt
+        int pizzaPrice = 0;            // Stores price of chosen pizza to use in receipt
 
-        if(pizzaNumber == 1){
+        if(pizzaNumber == 1){           // Assigning values to the chosenPizza and pizzaPrice
             chosenPizza = pizza1;
             pizzaPrice = pizza1Price;
         }
@@ -126,12 +126,12 @@ public class PizzaOrder {
             pizzaPrice = pizza10Price;
         }
 
-        choosePizzaSize(chosenPizza, pizzaPrice);
+        choosePizzaSize(chosenPizza, pizzaPrice);    // Move on to pizzaSize method. Passing two variables to be used in receipt
     }
 
     public static void addToppingsPrintReciept(String chosenPizza, double newPrice, String chosenSize){
 
-        String topping1 = "Peperoni";
+        String topping1 = "Peperoni";                    // Declares available toppings
         String topping2 = "Mozarella";
         String topping3 = "Mushroom";
         String topping4 = "Sausage";
@@ -139,7 +139,7 @@ public class PizzaOrder {
         String topping6 = "Onion";
         String topping7 = "Ranch Dressing";
 
-        System.out.println("-------------------- Add Toppings --------------------");
+        System.out.println("-------------------- Add Toppings --------------------");    // Prints topping menu
         System.out.println("-------- Maximum 2 ------------------ 5 DKK each------");
         System.out.println("1. "+topping1);
         System.out.println("2. "+topping2);
@@ -152,25 +152,25 @@ public class PizzaOrder {
         System.out.println("Enter the number of the topping you want to add: ");
         System.out.println("Enter a non number to order'");
 
-        int toppingPrice = 0;
-        int toppingCount = 0;
-        int chosenToppingNum = 0;
-        String chosenTopping1 = "";
+        int toppingPrice = 0;          // Total price of toppings
+        int toppingCount = 0;          // Number of toppings. loop must break if 2 toppings is chosen
+        int chosenToppingNum = 0;      // Temporarily store number of chosen topping
+        String chosenTopping1 = "";    // Stores name of toppings, so it can be passed to receipt
         String chosenTopping2 = "";
 
         Scanner in = new Scanner(System.in);
 
         while(toppingCount<2){
 
-            while(chosenToppingNum>7 || chosenToppingNum<1){
+            while(chosenToppingNum>7 || chosenToppingNum<1){  //Loop continues as long as chosen number is not within scope
 
-                if(in.hasNextInt()){
+                if(in.hasNextInt()){                          //Checks that input is integer
                     chosenToppingNum = in.nextInt();
 
                     if(chosenToppingNum == 1){
-                        chosenTopping1 = topping1;
-                        toppingCount++;
-                        toppingPrice += 5;
+                        chosenTopping1 = topping1;            //Store topping name to use in receipt
+                        toppingCount++;                       //Increment number of toppings
+                        toppingPrice += 5;                    //Increment total topping price
                     }
                     else if(chosenToppingNum == 2){
                         chosenTopping1 = topping2;
@@ -267,7 +267,7 @@ public class PizzaOrder {
 
         double totalPrice = toppingPrice + newPrice;
 
-        System.out.println("-----------------------------Reciept-----------------------------");
+        System.out.println("-----------------------------Receipt-----------------------------");     // Print out receipt
         System.out.println("-----------------------------------------------------------------");
         System.out.printf("%s\n",chosenPizza);
         System.out.println("Size:");
@@ -285,11 +285,11 @@ public class PizzaOrder {
 
     public static void choosePizzaSize(String chosenPizza,int pizzaPrice){
 
-        int price = pizzaPrice;
+        int price = pizzaPrice;  // Used to calculate the price depending on the size
 
         String size1 ="Child", size2 ="Standard", size3 = "Family";
 
-        System.out.println("-----------------------------------------");
+        System.out.println("-----------------------------------------");       // Print size menu
         System.out.println("---------------Choose size---------------");
         System.out.printf("1. %-20s Price DKK %.2f\n",size1,price*0.75);
         System.out.printf("2. %-20s Price DKK %.2f\n",size2,(double)price);
@@ -331,7 +331,7 @@ public class PizzaOrder {
             newPrice = price*1.5;
         }
 
-        addToppingsPrintReciept(chosenPizza,newPrice,chosenSize);
+        addToppingsPrintReciept(chosenPizza,newPrice,chosenSize);   // Go to next method and pass variables to be used in receipt
     }
 
 }
