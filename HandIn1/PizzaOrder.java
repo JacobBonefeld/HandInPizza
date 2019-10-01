@@ -4,7 +4,7 @@ public class PizzaOrder {
 
     public static void main(String[] args) {
 
-        showMenu();                   // Store number of chosen pizza
+        showMenu();                   
 
 
         /*COMMENTS FROM ROBERT
